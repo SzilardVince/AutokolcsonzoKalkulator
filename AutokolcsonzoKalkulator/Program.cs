@@ -32,7 +32,13 @@ for (int i = 0; i < 4; i++)
     naptelj = naptelj + fizetendo[i];
 }
 atlag = naptelj / 4;
-Console.WriteLine($"Napi teljes bevétel: {naptelj} Ft");
+Console.WriteLine("Rögzített kölcsönzések díjai:");
+for (int i = 0; i < 4; i++)
+{
+    Console.WriteLine($"\t- {i}. bérlés: {fizetendo[i]} Ft");
+}
+Console.WriteLine();
+    Console.WriteLine($"Napi teljes bevétel: {naptelj} Ft");
 Console.WriteLine($"Átlagos kölcsönzési díj: {atlag} Ft");
 string ertekeles = "";
 if (naptelj >= 200000)
@@ -47,4 +53,5 @@ else
 {
     ertekeles = "Gyenge forgalmú nap.";
 }
-Console.WriteLine($"Napi értékelés: {atlag} Ft");
+Console.WriteLine($"Napi értékelés: {ertekeles}");
+Console.ForegroundColor = ConsoleColor.Black;
