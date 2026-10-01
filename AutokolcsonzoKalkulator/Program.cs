@@ -1,4 +1,5 @@
-﻿Console.WriteLine("Hello, World!");
+﻿double atlag = 0;
+Console.WriteLine("Hello, World!");
 List<double> fizetendo = new List<double> {};
 for (int i = 0; i < 4; i++)
 {
@@ -23,4 +24,27 @@ for (int i = 0; i < 4; i++)
         napdijoszeg = napdijoszeg * 0.95;
     }
     fizetendo.Add(napdijoszeg);
+    atlag = atlag + knsz;
 }
+double naptelj = 0;
+for (int i = 0; i < 4; i++)
+{
+    naptelj = naptelj + fizetendo[i];
+}
+atlag = naptelj / 4;
+Console.WriteLine($"Napi teljes bevétel: {naptelj} Ft");
+Console.WriteLine($"Átlagos kölcsönzési díj: {atlag} Ft");
+string ertekeles = "";
+if (naptelj >= 200000)
+{
+    ertekeles = "Kiemelkedő forgalmú nap!";
+}
+else if (naptelj >= 100000)
+{
+    ertekeles = "Átlagos forgalmú nap.";
+}
+else
+{
+    ertekeles = "Gyenge forgalmú nap.";
+}
+Console.WriteLine($"Napi értékelés: {atlag} Ft");
